@@ -1,0 +1,17 @@
+stages:
+    - stage: Firststage
+      jobs:
+      - job: FirstJob
+        steps:
+        - script: echo first job
+      - job: SecondJob
+        steps:
+        - script: echo second job
+    - stage: Secondstage
+      jobs:
+          - job: SecondJob
+            steps:
+                - script: echo hey reached the final
+          - job: SecondJob
+            steps:
+             - script: echo second job
